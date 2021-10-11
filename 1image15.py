@@ -1,7 +1,8 @@
 import pygame
+import random
+from random import randint
 from pygame.draw import *
 pygame.init()
-#erfmkg4orelgnol4rnbolern
 
 FPS = 30
 screen = pygame.display.set_mode((550, 778))
@@ -14,7 +15,9 @@ rect(screen, (238,130,238), (0,107, 550, 70))
 rect(screen, (219,112,147), (0,177, 550, 106))
 rect(screen, (255, 127, 80), (0,283, 550, 106))
 rect(screen, (32,178,170), (0,389, 550, 389))
-
+e=-60
+f=-30
+D = 20
 
 def fish(x,y,h): #функция для рисования рыбы
     fish = pygame.Surface([1000,1000], pygame.SRCALPHA, 32)
@@ -32,16 +35,19 @@ def fish(x,y,h): #функция для рисования рыбы
     ellipse(fish, BLACK, (4.2*h,2.5*h,0.3*h,0.3*h))
     line(fish,BLACK,[4*h,3.5*h],[4.7*h,3.5*h],1)
     screen.blit(fish,(x,y))
-def smallbird(name,x,y,n,angle): #функция для рисования чайки
+
+
+def smallbird(x,y,n,angle): #функция для рисования чайки
     name = pygame.Surface([640,480], pygame.SRCALPHA, 32)
     name = name.convert_alpha()
     arc(name,WHITE,(0,0,4*n,3*n),0, 2.7, 3)
     arc(name,WHITE,(4*n,0,4*n,3*n),0.75, 3.14, 3)
     name = pygame.transform.rotate(name, angle)
     screen.blit(name,(x,y))
-smallbird('1',50,200,20,-12)
-smallbird('2',20,10,15,12)
-smallbird('3',27,70,10,-19)
+
+
+for i in range(D): #Рисуем птички разных размеров в разных местах экрана
+    smallbird( randint(-100,300),randint(0,350),randint(10,20),randint(-15,-6))
 
 firstbigbird = pygame.Surface([550,778], pygame.SRCALPHA, 32)
 firstbigbird = firstbigbird.convert_alpha()
@@ -56,7 +62,7 @@ firstbigbird.blit(wig1,(140,380))
 
 
 
-wig2 = pygame.Surface([400,400], pygame.SRCALPHA, 32) #крыло 2
+wig2 = pygame.Surface([400,400], pygame.SRCALPHA, 32)
 wig2 = wig2.convert_alpha()
 polygon(wig2, WHITE, [[200,200],[200,155],[170,85],[85,60],[105,80],[90,80],[110,100],[95,100],[115,120],[100,120],[120,140],[105,140],[125,160],[110,160],[130,180],[115,180],[160,200]])
 polygon(wig2, BLACK, [[200,200],[200,155],[170,85],[85,60],[105,80],[90,80],[110,100],[95,100],[115,120],[100,120],[120,140],[105,140],[125,160],[110,160],[130,180],[115,180],[160,200]],1)
@@ -96,8 +102,17 @@ firstbigbird.blit(Leg2,(230,280))
 Leg2 = pygame.transform.rotate(Leg2, 9)
 firstbigbird.blit(Leg2,(205,70))
 screen.blit(firstbigbird,(-80,-20))
+firstbigbird = pygame.transform.scale(firstbigbird, (183,259))
+firstbigbird =pygame.transform.flip(firstbigbird, True, False)
+screen.blit(firstbigbird,(400,290))
+firstbigbird =pygame.transform.flip(firstbigbird, True, False)
+firstbigbird = pygame.transform.scale(firstbigbird, (138,195))
+screen.blit(firstbigbird,(250,300))
+fish(50,650,16)
+fish(400,670,17)
+fish(450,590,12)
 
-fish(360,660,19)
+
 
 
 
