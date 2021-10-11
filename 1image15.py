@@ -1,6 +1,7 @@
 import pygame
 from pygame.draw import *
 pygame.init()
+#erfmkg4orelgnol4rnbolern
 
 FPS = 30
 screen = pygame.display.set_mode((550, 778))
@@ -51,7 +52,7 @@ wig1 = wig1.convert_alpha()
 polygon(wig1, WHITE, [[200,200],[200,155],[170,85],[85,60],[105,80],[90,80],[110,100],[95,100],[115,120],[100,120],[120,140],[105,140],[125,160],[110,160],[130,180],[115,180],[160,200]])
 polygon(wig1, BLACK, [[200,200],[200,155],[170,85],[85,60],[105,80],[90,80],[110,100],[95,100],[115,120],[100,120],[120,140],[105,140],[125,160],[110,160],[130,180],[115,180],[160,200]],1)
 wig1 = pygame.transform.rotate(wig1, 0)
-firstbigbird.blit(wig1,(140,380)) 
+firstbigbird.blit(wig1,(140,380))
 
 
 
@@ -63,7 +64,7 @@ wig2 = pygame.transform.rotate(wig2, 20)
 firstbigbird.blit(wig2,(40,310))
 
 
-    
+
 ellipse(firstbigbird, WHITE, (190,560,190,90)) #тело
 ellipse(firstbigbird, WHITE, (350,575,90,35)) #шея
 
